@@ -1,0 +1,36 @@
+{% extends "store/base.html" %}
+
+{% block title %}
+{% if product %}
+Edit Product
+{% else %}
+Add Product
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+{% if product %}
+    <h1>Edit Product</h1>
+{% else %}
+    <h1>Add Product</h1>
+{% endif %}
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    {% if product %}
+        <button type="submit">Update Product</button>
+    {% else %}
+        <button type="submit">Add Product</button>
+    {% endif %}
+
+</form>
+
+<a href="{% url 'product_list' %}">Cancel</a>
+
+{% endblock %}

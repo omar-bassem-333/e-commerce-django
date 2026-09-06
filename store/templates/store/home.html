@@ -1,0 +1,17 @@
+{% extends "store/base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to Tech Store</h1>
+
+<p>Find the latest technology products in our store.</p>
+
+<a href="{% url 'product_list' %}">
+    View Products
+</a>
+
+{% endblock %}
